@@ -30,6 +30,35 @@ public class forms extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String nome = request.getParameter("nome");
+
+        String curso = request.getParameter("curso");
+
+        String email = request.getParameter("email");;
+
+        
+
+        String htmlResponse = "<html>";
+
+        htmlResponse += "<body><p>Nome: "+nome+"</p>";
+
+        htmlResponse +="<p>Curso: "+curso+"</p>";
+
+        htmlResponse +="<p>E-mail: "+email+"</p>";
+
+        htmlResponse += "<form name=\"confirm\" method=\"get\" action=\"confirm\">"
+
+                         + "<input type=\"submit\" value=\"Confirmar\" /></form>";
+
+        htmlResponse +="</html>";
+
+
+
+        PrintWriter out = response.getWriter();
+
+        
+
+        out.println(htmlResponse);
 		
 	}
 
